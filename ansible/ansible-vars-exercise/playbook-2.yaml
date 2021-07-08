@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+  - name: Create file containing host IP
+    lineinfile:
+      path: ~/testfile
+      line: "Host IP: {{ hostvars[inventory_hostname]['ansible_all_ipv4_addresses'] }}"
+      create: yes

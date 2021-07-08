@@ -1,0 +1,8 @@
+- hosts: all
+  vars:
+    github_repo: "https://github.com/HGWright/simple-flask-app"
+  tasks:
+  - name: Clone down the repo
+    git:
+      repo: "{{ github_repo }}"
+      dest: ~/my_repo
